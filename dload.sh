@@ -2,7 +2,7 @@
 
 DOCKER_HUB=willdockerhub
 DOCKER_FILE=Dockerfile.helm
-TAG=$(ls ${DOCKER_FILE} | awk -F . '{print $2}')
+TAG=$(echo ${DOCKER_FILE} | awk -F . '{print $2}')
 
 docker build -t ${DOCKER_HUB}/alpine-storage:${TAG} -f ${DOCKER_FILE}
 
