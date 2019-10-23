@@ -4,7 +4,7 @@ SHELL_SCRIPT=helm.sh
 DOCKER_HUB=willdockerhub
 TAG=$(echo $SHELL_NAME | awk -F '.' '{print $1}')
 
-cat > $SHELL_NAME << EOF
+cat > $SHELL_SCRIPT << EOF
 #!/bin/bash
 wget https://get.helm.sh/helm-${version}-linux-amd64.tar.gz
 EOF
