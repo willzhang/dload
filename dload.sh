@@ -9,6 +9,6 @@ cat > $SHELL_SCRIPT << EOF
 wget https://get.helm.sh/helm-${version}-linux-amd64.tar.gz
 EOF
 
-docker build -t ${DOCKER_HUB}/alpine-storage:${TAG} -f ${DOCKER_FILE} --build-arg SHELL_NAME=${SHELL_SCRIPT} .
+docker build -t ${DOCKER_HUB}/alpine-storage:${TAG} --build-arg SHELL_NAME=${SHELL_SCRIPT} .
 docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 docker push ${DOCKER_HUB}/alpine-storage:${TAG}
