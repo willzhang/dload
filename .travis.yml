@@ -4,4 +4,4 @@ services:
 - docker
 
 script:
-- bash push-images.sh
+- bash dload.sh
