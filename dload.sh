@@ -2,7 +2,7 @@
 
 SHELL_SCRIPT=helm.sh
 DOCKER_HUB=willdockerhub
-TAG=$(echo $SHELL_NAME | awk -F '.' '{print $1}')
+TAG=$(echo $SHELL_SCRIPT | awk -F '.' '{print $1}')
 
 cat > $SHELL_SCRIPT << EOF
 #!/bin/bash
