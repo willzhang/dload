@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_FILE=Dockerfile.ubuntu1910
+DOCKER_FILE=Dockerfile.ubuntu1904
 DOCKER_HUB=willdockerhub
 TAG=$(echo $DOCKER_FILE | awk -F '.' '{print $2}')
 
