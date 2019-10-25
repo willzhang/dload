@@ -1,6 +1,6 @@
-some package download too slow in china insteard by dokcer
+Foreign server software package download
 
-#usage
+## usage
 ```
 image_name=istio
 docker run -itd --name ${image_name} willdockerhub/dload:${image_name} sleep 10000
