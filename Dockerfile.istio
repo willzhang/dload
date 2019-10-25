@@ -1,3 +1,4 @@
 FROM willdockerhub/curl-wget
 ENV version=1.3.3
-RUN wget https://github.com/istio/istio/releases/download/${version}/istio-${versoin}-linux.tar.gz -P /dload/
+RUN mkdir /dload/ \
+    && wget https://github.com/istio/istio/releases/download/${version}/istio-${versoin}-linux.tar.gz -P /dload/
