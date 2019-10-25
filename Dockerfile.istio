@@ -1,3 +1,3 @@
 FROM willdockerhub/curl-wget
 ENV version=1.3.3
-RUN curl -L https://git.io/getLatestIstio | ISTIO_VERSION=${version} sh -
+RUN wget https://github.com/istio/istio/releases/download/${version}/istio-${versoin}-linux.tar.gz -P /dload/
