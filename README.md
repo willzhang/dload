@@ -1,8 +1,9 @@
-official vagrant-box for latest version centos and ubuntu.
+some package download too slow in china insteard by dokcer
 
 #usage
 ```
-docker run -itd --name centos willdockerhub/vagrant-box:centos
-docker cp centos:/vagrant ./
-docker rm -f centos
+image_name=istio
+docker run -itd --name ${image_name} willdockerhub/dload:${image_name} sleep 10000
+docker cp centos:/dload/ .
+docker rm -f ${image_name}
 ```
