@@ -1,0 +1,4 @@
+FROM willdockerhub/curl-wget
+ENV VERSION=v1.9.2
+RUN mkdir /dload/ \
+    && https://github.com/goharbor/harbor/releases/download/${VERSION}/harbor-offline-installer-${VERSION}.tgz -P /dload/
