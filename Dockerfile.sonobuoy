@@ -7,6 +7,6 @@ RUN mkdir $HOME/bin \
     && tar -xzf $HOME/bin/sonobuoy.tar.gz -C $HOME/bin \
     && chmod +x $HOME/bin/sonobuoy \
     && rm $HOME/bin/sonobuoy.tar.gz \
-	  && sonobuoy images > images.list \
+	  && $HOME/bin/sonobuoy images > images.list \
 	  && cat images.list | xargs -I {} docker pull {} \
 	  && for image in $(cat images.list);do docker save ${image} | gzip > sonobuoy.tar.gz;done
