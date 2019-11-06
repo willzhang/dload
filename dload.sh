@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_FILE=Dockerfile.harbor
+DOCKER_FILE=Dockerfile.sonobuoy
 DOCKER_HUB=willdockerhub
 TAG=$(echo $DOCKER_FILE | awk -F '.' '{print $2}')
 
