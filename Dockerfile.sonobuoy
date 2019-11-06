@@ -1,0 +1,12 @@
+FROM willdockerhub/curl-wget
+ENV VERSION=0.16.2 \
+    OS=linux
+
+RUN mkdir $HOME/bin \
+    && curl -L "https://github.com/vmware-tanzu/sonobuoy/releases/download/v${VERSION}/sonobuoy_${VERSION}_${OS}_amd64.tar.gz" --output $HOME/bin/sonobuoy.tar.gz \
+    && tar -xzf $HOME/bin/sonobuoy.tar.gz -C $HOME/bin \
+    && chmod +x $HOME/bin/sonobuoy \
+    && rm $HOME/bin/sonobuoy.tar.gz \
+	  && sonobuoy images > images.list \
+	  && cat images.list | xargs -I {} docker pull {} \
+	  && for image in $(cat images.list);do docker save ${image} | gzip > sonobuoy.tar.gz;done
