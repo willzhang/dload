@@ -1,4 +1,8 @@
 FROM willdockerhub/curl-wget
-ENV VERSION=v1.9.2
 RUN mkdir /dload/ \
-    && wget https://github.com/goharbor/harbor/releases/download/${VERSION}/harbor-offline-installer-${VERSION}.tgz -P /dload/
+    && curl -s https://api.github.com/repos/goharbor/harbor/releases/latest \
+       | grep browser_download_url \
+       | grep offline-installer \
+       | grep -v asc \
+       | cut -d '"' -f 4 \
+       | xargs wget -P /dload/
