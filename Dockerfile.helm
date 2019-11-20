@@ -1,4 +1,4 @@
 FROM alpine
-ENV version=v2.15.1
+ENV version=v3.0.0
 RUN mkdir /dload/ \
     && wget https://get.helm.sh/helm-${version}-linux-amd64.tar.gz -P /dload/
