@@ -1,0 +1,4 @@
+FROM willdockerhub/curl-wget
+ENV version=v3.10.3
+RUN mkdir /dload/ \
+    && wget https://github.com/projectcalico/calico/releases/download/${version}/release-${version}.tgz -P /dload/
